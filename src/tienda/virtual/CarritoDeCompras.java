@@ -15,4 +15,7 @@ public class CarritoDeCompras {
     private String Fecha;
     private ArrayList<Producto> Compras;
     private double CostoTotal;
+
+    public void AgregarProducto(Producto producto){}
+    
 }

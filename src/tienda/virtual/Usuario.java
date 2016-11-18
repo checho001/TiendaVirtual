@@ -16,7 +16,16 @@ public class Usuario {
     protected int numero;
     protected String Nick;
     protected String Pass;
+
+    public Usuario(ArrayList<CarritoDeCompras> Factura, int numero, String Nick, String Pass) {
+        this.Factura = Factura;
+        this.numero = numero;
+        this.Nick = Nick;
+        this.Pass = Pass;
+    }
     
-    public abstract void Comprar();
-    public abstract void ClasificacionProductos();
+    
+    public void Comprar(){}
+
+    public void ClasificacionProductos(){}
 }

@@ -16,6 +16,15 @@ public class Producto {
     private int Cantidad;
     private String Marca;
     private String tipo;
-    private ArrayList<> CalificacionPonderada;
+    private ArrayList<Integer> CalificacionPonderada;
     private double CalificacionTotal;
+
+    public Producto(int Codigo, int Cantidad, String Marca, String tipo) {
+        this.Codigo = Codigo;
+        this.Cantidad = Cantidad;
+        this.Marca = Marca;
+        this.tipo = tipo;
+    }
+    
+    
 }
