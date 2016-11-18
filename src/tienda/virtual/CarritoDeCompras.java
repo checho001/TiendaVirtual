@@ -12,6 +12,7 @@ import java.util.*;
  * @author CLARA
  */
 public class CarritoDeCompras {
+    
     private String Fecha;
     private ArrayList<Producto> Compras;
     private double CostoTotal;

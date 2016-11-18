@@ -17,6 +17,7 @@ public class TiendaVirtual {
   public HashMap<Integer,Producto> Productos;
   
   
+  
   public void RegistrarUsuario(Usuario usuario){
   
   }

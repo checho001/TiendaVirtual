@@ -12,6 +12,7 @@ import java.util.*;
  * @author CLARA
  */
 public class Usuario {
+    
     protected ArrayList<CarritoDeCompras> Factura;
     protected int numero;
     protected String Nick;
@@ -23,6 +24,7 @@ public class Usuario {
         this.Nick = Nick;
         this.Pass = Pass;
     }
+    
     
     
     public void Comprar(){}

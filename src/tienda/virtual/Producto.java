@@ -19,6 +19,7 @@ public class Producto {
     private ArrayList<Integer> CalificacionPonderada;
     private double CalificacionTotal;
 
+    
     public Producto(int Codigo, int Cantidad, String Marca, String tipo) {
         this.Codigo = Codigo;
         this.Cantidad = Cantidad;
