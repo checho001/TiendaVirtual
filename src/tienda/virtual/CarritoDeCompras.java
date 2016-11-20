@@ -17,6 +17,38 @@ public class CarritoDeCompras {
     private ArrayList<Producto> Compras;
     private double CostoTotal;
 
+    public CarritoDeCompras(String Fecha, ArrayList<Producto> Compras, double CostoTotal) {
+        this.Fecha = Fecha;
+        this.Compras = Compras;
+        this.CostoTotal = CostoTotal;
+    }
+
+    public String getFecha() {
+        return Fecha;
+    }
+
+    public void setFecha(String Fecha) {
+        this.Fecha = Fecha;
+    }
+
+    public ArrayList<Producto> getCompras() {
+        return Compras;
+    }
+
+    public void setCompras(ArrayList<Producto> Compras) {
+        this.Compras = Compras;
+    }
+
+    public double getCostoTotal() {
+        return CostoTotal;
+    }
+
+    public void setCostoTotal(double CostoTotal) {
+        this.CostoTotal = CostoTotal;
+    }
+    
+    
+
     public void AgregarProducto(Producto producto,int i){
         
         this.Compras.add(producto);

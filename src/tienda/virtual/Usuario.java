@@ -17,17 +17,55 @@ public class Usuario {
     protected int numero;
     protected String Nick;
     protected String Pass;
+    protected int Switch;
 
     public Usuario(ArrayList<CarritoDeCompras> Factura, int numero, String Nick, String Pass) {
         this.Factura = Factura;
         this.numero = numero;
         this.Nick = Nick;
         this.Pass = Pass;
+        
+    }
+    //getter && setter
+    public ArrayList<CarritoDeCompras> getFactura() {
+        return Factura;
+    }
+
+    public void setFactura(ArrayList<CarritoDeCompras> Factura) {
+        this.Factura = Factura;
+    }
+
+    public int getNumero() {
+        return numero;
+    }
+
+    public void setNumero(int numero) {
+        this.numero = numero;
+    }
+
+    public String getNick() {
+        return Nick;
+    }
+
+    public void setNick(String Nick) {
+        this.Nick = Nick;
+    }
+
+    public String getPass() {
+        return Pass;
+    }
+
+    public void setPass(String Pass) {
+        this.Pass = Pass;
     }
     
+    //funciones
     
-    
-    public void Comprar(){}
+    public void Comprar(CarritoDeCompras p){
+        this.Factura.add(p);
+             
+    }
 
     public void ClasificacionProductos(){}
+    // no recuerdo que era
 }

@@ -29,7 +29,9 @@ public class Producto {
         this.nombre = nombre;
         this.Costo = Costo;
     }
-
+    
+    
+//Getter && Setter
     public String getNombre() {
         return nombre;
     }
@@ -37,11 +39,7 @@ public class Producto {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-
-   
-
     
-   
     public int getCodigo() {
         return Codigo;
     }
@@ -78,18 +76,17 @@ public class Producto {
         return CalificacionPonderada;
     }
 
-    public void setCalificacionPonderada(ArrayList<Integer> CalificacionPonderada) {
-        this.CalificacionPonderada = CalificacionPonderada;
-    }
 
     public double getCalificacionTotal() {
-        return CalificacionTotal;
+        double Total = 0;
+        for(int i:this.CalificacionPonderada){
+            Total += i;
+        }
+            this.CalificacionTotal=(Total/this.CalificacionPonderada.size());
+        return this.CalificacionTotal;
     }
 
-    public void setCalificacionTotal(double CalificacionTotal) {
-        this.CalificacionTotal = CalificacionTotal;
-    }
-
+    
     public double getCosto() {
         return Costo;
     }

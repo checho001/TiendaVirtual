@@ -15,14 +15,17 @@ public class TiendaVirtual {
 
   public HashMap<Integer,Usuario> Usuarios;
   public HashMap<Integer,Producto> Productos;
-  
+  public int contadorP;
+  public int contadorU;
   
   
   public void RegistrarUsuario(Usuario usuario){
-  
+      this.Usuarios.put(this.contadorU, usuario);
+      this.contadorU++;
   }
   public void RegistrarProducto(Producto producto){
-  
+      this.Productos.put(contadorP, producto);
+      contadorP++;
   }
   
 }
