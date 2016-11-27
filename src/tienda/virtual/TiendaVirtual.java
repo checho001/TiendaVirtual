@@ -12,20 +12,88 @@ import java.util.*;
  * @author CLARA
  */
 public class TiendaVirtual {
+private HashMap<Integer,Vendedor> Vendedor;
+  private  HashMap<Integer,Usuario> Usuarios;
+  private ArrayList<Producto> Productos;
 
-  public HashMap<Integer,Usuario> Usuarios;
-  public HashMap<Integer,Producto> Productos;
-  public int contadorP;
-  public int contadorU;
-  
-  
+    public TiendaVirtual() {
+        HashMap<TreeMap<String,String>,Producto> CarritodeCompras= new HashMap<>();
+    }
   public void RegistrarUsuario(Usuario usuario){
-      this.Usuarios.put(this.contadorU, usuario);
-      this.contadorU++;
+  
   }
   public void RegistrarProducto(Producto producto){
-      this.Productos.put(contadorP, producto);
-      contadorP++;
-  }
   
+  }
+      public double CalcularGananciasV(int membrecia, int diainicial, int mesinicial, int diafinal, int mesfinal){
+     String marca = Vendedor.get(membrecia).getMarca();
+     double ganancia=0;
+     for(Usuario s: this.Usuarios.values() ){
+         for(CarritoDeCompras cd: s.getFactura() ){
+         if(cd.getMesfecha()>=mesinicial && cd.getMesfecha()<=mesfinal){
+             if(cd.getDiafecha()>=diainicial && cd.getDiafecha()<=diafinal){
+              for(Producto ps : cd.getCompras()){
+                if(ps.getMarca().equals(marca)){
+                   ganancia+= ps.getPrecio();
+                }
+               }
+              }
+             }
+            }
+           } return ganancia;
+      }
+      public ArrayList<Producto> ListarProductosv(int membrecia, int diainicial, int mesinicial, int diafinal, int mesfinal){
+     String marca = Vendedor.get(membrecia).getMarca();
+     ArrayList <Producto>p=new ArrayList<>();
+     for(Usuario s: this.Usuarios.values() ){
+         for(CarritoDeCompras cd: s.getFactura() ){
+         if(cd.getMesfecha()>=mesinicial && cd.getMesfecha()<=mesfinal){
+             if(cd.getDiafecha()>=diainicial && cd.getDiafecha()<=diafinal){
+              for(Producto ps : cd.getCompras()){
+                if(ps.getMarca().equals(marca)){
+                  p.add(ps);
+                }
+               }
+              }
+             }
+            }
+           } return p;
+      }
+      public TreeMap <Integer ,Usuario> ClientesEspeciales(int membrecia){
+     String marca = Vendedor.get(membrecia).getMarca();
+     TreeMap <Integer ,Usuario>us=new TreeMap<>();
+     int count=0;
+     for(Usuario s: this.Usuarios.values() ){
+         for(CarritoDeCompras cd: s.getFactura() ){
+              for(Producto ps : cd.getCompras()){
+                if(ps.getMarca().equals(marca)){
+                   count++;
+              }
+                if(count!=0){
+                    us.put(count, s);
+                }
+             }
+            }
+           }return us;
+      }
+public ArrayList<Producto> FiltroListarproductos (String filtro, Double precio){
+    ArrayList<Producto> ps=new ArrayList<>();
+    for(Producto p: this.Productos){
+        if(filtro!=null){
+       if(p.getCodigo().equals(filtro) || p.getMarca().equals(filtro) || p.getTipo().equals(filtro)){
+           ps.add(p);
+       }
+        }
+         if(precio!=null){
+       if(p.getPrecio()>=(precio*(1.3)) && p.getPrecio()<=(precio*(0.7))){
+           ps.add(p);
+       }
+        }
+    }return ps;
+}
+public void ProductosmasVendidos(){
+    for(Producto p:this.Productos){
+        
+    }
+}
 }

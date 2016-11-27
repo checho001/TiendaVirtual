@@ -12,22 +12,25 @@ import java.util.ArrayList;
  * @author CLARA
  */
 public class Vendedor extends Usuario{
-    private double ValorExtra;
+     private double ValorExtra;
     private double Ganancia;
     private boolean Membrecia;
+    private String marca;
     private double valorR; // por insatisfaccion.
 
-    public Vendedor(double ValorExtra, double Ganancia, boolean Membrecia, double valorR, ArrayList<CarritoDeCompras> Factura, int numero, String Nick, String Pass) {
+   /* public Vendedor(double ValorExtra, double Ganancia, boolean Membrecia, double valorR, ArrayList<CarritoDeCompras> Factura, int numero, String Nick, String Pass, String marca) {
         super(Factura, numero, Nick, Pass);
         this.ValorExtra = ValorExtra;
         this.Ganancia = Ganancia;
         this.Membrecia = Membrecia;
         this.valorR = valorR;
+        this.marca= marca;
+    }*/
+    
+    public void enviarpromocion(Usuario usuario){
+        
     }
-    
-    
-    
-    //getter && setter
+
     public double getValorExtra() {
         return ValorExtra;
     }
@@ -60,37 +63,14 @@ public class Vendedor extends Usuario{
         this.valorR = valorR;
     }
 
-    public ArrayList<CarritoDeCompras> getFactura() {
-        return Factura;
+    public String getMarca() {
+        return marca;
     }
 
-    public void setFactura(ArrayList<CarritoDeCompras> Factura) {
-        this.Factura = Factura;
+    public void setMarca(String marca) {
+        this.marca = marca;
     }
-
-    public int getNumero() {
-        return numero;
-    }
-
-    public void setNumero(int numero) {
-        this.numero = numero;
-    }
-
-    public String getNick() {
-        return Nick;
-    }
-
-    public void setNick(String Nick) {
-        this.Nick = Nick;
-    }
-
-    public String getPass() {
-        return Pass;
-    }
-
-    public void setPass(String Pass) {
-        this.Pass = Pass;
-    }
+    
     
     
     

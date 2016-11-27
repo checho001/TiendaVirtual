@@ -12,39 +12,27 @@ import java.util.*;
  * @author CLARA
  */
 public class Producto {
-    private int Codigo;
+   private String Codigo;
     private int Cantidad;
     private String Marca;
     private String tipo;
-    private String nombre;
-    private double Costo;
+    private double Precio;
     private ArrayList<Integer> CalificacionPonderada;
     private double CalificacionTotal;
 
-    public Producto(int Codigo, int Cantidad, String Marca, String tipo, String nombre, double Costo) {
+    
+    /*public Producto(int Codigo, int Cantidad, String Marca, String tipo) {
         this.Codigo = Codigo;
         this.Cantidad = Cantidad;
         this.Marca = Marca;
         this.tipo = tipo;
-        this.nombre = nombre;
-        this.Costo = Costo;
-    }
-    
-    
-//Getter && Setter
-    public String getNombre() {
-        return nombre;
-    }
+    }*/
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-    
-    public int getCodigo() {
+    public String getCodigo() {
         return Codigo;
     }
 
-    public void setCodigo(int Codigo) {
+    public void setCodigo(String Codigo) {
         this.Codigo = Codigo;
     }
 
@@ -76,24 +64,26 @@ public class Producto {
         return CalificacionPonderada;
     }
 
+    public void setCalificacionPonderada(ArrayList<Integer> CalificacionPonderada) {
+        this.CalificacionPonderada = CalificacionPonderada;
+    }
 
     public double getCalificacionTotal() {
-        double Total = 0;
-        for(int i:this.CalificacionPonderada){
-            Total += i;
-        }
-            this.CalificacionTotal=(Total/this.CalificacionPonderada.size());
-        return this.CalificacionTotal;
+        return CalificacionTotal;
     }
 
+    public void setCalificacionTotal(double CalificacionTotal) {
+        this.CalificacionTotal = CalificacionTotal;
+    }
+
+    public double getPrecio() {
+        return Precio;
+    }
+
+    public void setPrecio(double Precio) {
+        this.Precio = Precio;
+    }
     
-    public double getCosto() {
-        return Costo;
-    }
-
-    public void setCosto(double Costo) {
-        this.Costo = Costo;
-    }
     
     
 }

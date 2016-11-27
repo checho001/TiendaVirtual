@@ -12,21 +12,24 @@ import java.util.*;
  * @author CLARA
  */
 public class Usuario {
-    
     protected ArrayList<CarritoDeCompras> Factura;
     protected int numero;
     protected String Nick;
     protected String Pass;
-    protected int Switch;
 
-    public Usuario(ArrayList<CarritoDeCompras> Factura, int numero, String Nick, String Pass) {
+    /*public Usuario(ArrayList<CarritoDeCompras> Factura, int numero, String Nick, String Pass) {
         this.Factura = Factura;
         this.numero = numero;
         this.Nick = Nick;
         this.Pass = Pass;
-        
-    }
-    //getter && setter
+    }*/
+    
+    
+    
+    public void Comprar(){}
+
+    public void ClasificacionProductos(){}
+
     public ArrayList<CarritoDeCompras> getFactura() {
         return Factura;
     }
@@ -59,13 +62,5 @@ public class Usuario {
         this.Pass = Pass;
     }
     
-    //funciones
     
-    public void Comprar(CarritoDeCompras p){
-        this.Factura.add(p);
-             
-    }
-
-    public void ClasificacionProductos(){}
-    // no recuerdo que era
 }

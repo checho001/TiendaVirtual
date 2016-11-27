@@ -12,23 +12,55 @@ import java.util.*;
  * @author CLARA
  */
 public class CarritoDeCompras {
-    
-    private String Fecha;
+    private int diafecha;
+    private int Mesfecha;
     private ArrayList<Producto> Compras;
     private double CostoTotal;
 
-    public CarritoDeCompras(String Fecha, ArrayList<Producto> Compras, double CostoTotal) {
-        this.Fecha = Fecha;
-        this.Compras = Compras;
-        this.CostoTotal = CostoTotal;
+    public CarritoDeCompras(int diafecha, int Mesfecha) {
+        this.diafecha = diafecha;
+        this.Mesfecha = Mesfecha;
+        ArrayList<Producto> Compras = new ArrayList<>();
+    }
+    public void añadircompra(Producto p, int i){
+        for(int j=0; i>j ; i--){
+               if(i>p.getCantidad()){
+                   throw new ArithmeticException("Numero Excedido ");
+               }else{
+                   this.Compras.add(p);
+        p.setCantidad((p.getCantidad())-1);
+        this.CostoTotal+=p.getPrecio();
+               }
+        }
+    }
+    public void RemoverProductos(Producto p,int i){
+ for (Producto Compra : this.Compras) {
+ if(p.getCodigo().equals(Compra.getCodigo())){
+ if(i>Compra.getCantidad()){
+throw new ArithmeticException("Numero Excedido ");
+ }else{
+ this.Compras.remove(Compra);
+  this.CostoTotal -= i*Compra.getPrecio();
+                 }
+             }
+         }
+     
+     }
+
+    public int getDiafecha() {
+        return diafecha;
     }
 
-    public String getFecha() {
-        return Fecha;
+    public void setDiafecha(int diafecha) {
+        this.diafecha = diafecha;
     }
 
-    public void setFecha(String Fecha) {
-        this.Fecha = Fecha;
+    public int getMesfecha() {
+        return Mesfecha;
+    }
+
+    public void setMesfecha(int Mesfecha) {
+        this.Mesfecha = Mesfecha;
     }
 
     public ArrayList<Producto> getCompras() {
@@ -46,28 +78,6 @@ public class CarritoDeCompras {
     public void setCostoTotal(double CostoTotal) {
         this.CostoTotal = CostoTotal;
     }
-    
-    
 
-    public void AgregarProducto(Producto producto,int i){
-        
-        this.Compras.add(producto);
-        this.CostoTotal += i*producto.getCosto();
-    }
-    
-    public void RemoverProductos(Producto p,int i){
-        for (Producto Compra : this.Compras) {
-            if(p.getNombre().equals(Compra.getNombre())){
-                if(i>Compra.getCantidad()){
-                    throw new ArithmeticException("Numero Excedido ");
-                }else{
-                    Producto a = new Producto(Compra.getCodigo(), Compra.getCantidad()-i, Compra.getMarca(), Compra.getTipo(), Compra.getNombre(), Compra.getCosto());
-                    this.Compras.remove(Compra);
-                    this.Compras.add(a);
-                    this.CostoTotal -= i*a.getCosto();
-                }
-            }
-        }
-    
-    }
+
 }
