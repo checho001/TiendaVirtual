@@ -14,6 +14,7 @@ import java.util.*;
 public class Producto {
    private String Codigo;
     private int Cantidad;
+    private int Cantidadinicial;
     private String Marca;
     private String tipo;
     private double Precio;
@@ -40,8 +41,16 @@ public class Producto {
         return Cantidad;
     }
 
+    public int getCantidadinicial() {
+        return Cantidadinicial;
+    }
+
+    public void setCantidadinicial(int Cantidadinicial) {
+        this.Cantidadinicial += Cantidadinicial;
+    }
+
     public void setCantidad(int Cantidad) {
-        this.Cantidad = Cantidad;
+        this.Cantidad += Cantidad;
     }
 
     public String getMarca() {

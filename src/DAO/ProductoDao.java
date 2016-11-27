@@ -16,6 +16,13 @@ import tienda.virtual.Producto;
  *
  * @author CLARA
  */
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.PrintWriter;
+import java.util.Scanner;
+import tienda.virtual.Producto;
+
 public class ProductoDao {
     File file = new File("PRODUCTO.txt");
     

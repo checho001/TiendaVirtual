@@ -41,6 +41,7 @@ throw new ArithmeticException("Numero Excedido ");
  }else{
  this.Compras.remove(Compra);
   this.CostoTotal -= i*Compra.getPrecio();
+  p.setCantidad((p.getCantidad())+1);
                  }
              }
          }
@@ -79,5 +80,5 @@ throw new ArithmeticException("Numero Excedido ");
         this.CostoTotal = CostoTotal;
     }
 
-
+    
 }

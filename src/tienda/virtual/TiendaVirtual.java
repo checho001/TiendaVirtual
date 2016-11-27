@@ -19,7 +19,7 @@ private HashMap<Integer,Vendedor> Vendedor;
     public TiendaVirtual() {
         HashMap<TreeMap<String,String>,Producto> CarritodeCompras= new HashMap<>();
     }
-  public void RegistrarUsuario(Usuario usuario){
+ public void RegistrarUsuario(Usuario usuario){
   
   }
   public void RegistrarProducto(Producto producto){
@@ -91,9 +91,23 @@ public ArrayList<Producto> FiltroListarproductos (String filtro, Double precio){
         }
     }return ps;
 }
+public void añadircantidadproducto(String codigo, int cantidad){
+    for(Producto p: this.Productos){
+        if(p.getCodigo().equals(codigo)){
+            p.setCantidadinicial(cantidad);
+            p.setCantidad(cantidad);
+        }
+    }
+}
 public void ProductosmasVendidos(){
+    TreeMap<Integer,Producto> pmv=new TreeMap<>();
     for(Producto p:this.Productos){
-        
+       int a = p.getCantidad()-p.getCantidadinicial();
+       pmv.put(a, p);
     }
 }
 }
+
+      
+  
+

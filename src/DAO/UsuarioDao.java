@@ -16,8 +16,13 @@ import tienda.virtual.Usuario;
  *
  * @author CLARA
  */
+
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+import tienda.virtual.Vendedor;
+import tienda.virtual.Usuario;
 public class UsuarioDao {
-     File file = new File("USUARIO.txt");
+    File file = new File("USUARIO.txt");
     public Usuario recibirdatosusuario()throws FileNotFoundException{
      String nick = JOptionPane.showInputDialog(null, "Nick");
      Usuario usuario1 = new Usuario();
