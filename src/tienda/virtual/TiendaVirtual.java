@@ -1,4 +1,4 @@
-/*
+r/*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
@@ -6,24 +6,32 @@
 package tienda.virtual;
 
 import java.util.*;
-
+import DAO.ProductoDao;
+import DAO.UsuarioDao;
+import java.io.FileNotFoundException;
 /**
  *
  * @author CLARA
  */
 public class TiendaVirtual {
 private HashMap<Integer,Vendedor> Vendedor;
-  private  HashMap<Integer,Usuario> Usuarios;
+  private  HashMap<String,Usuario> Usuarios;
   private ArrayList<Producto> Productos;
 
     public TiendaVirtual() {
         HashMap<TreeMap<String,String>,Producto> CarritodeCompras= new HashMap<>();
     }
- public void RegistrarUsuario(Usuario usuario){
-  
+ public void RegistrarUsuario()throws FileNotFoundException{
+  UsuarioDao dao=new UsuarioDao();
+  Usuario us = dao.recibirdatosusuario();
+  dao.guardarusuario(us);
+  this.Usuarios.put(us.getNick(), us);
   }
-  public void RegistrarProducto(Producto producto){
-  
+  public void RegistrarProducto()throws FileNotFoundException{
+  ProductoDao dao=new ProductoDao();
+  Producto p = dao.recibirdatosproducto();
+  dao.guardarproducto(p);
+  this.Productos.add(p);
   }
       public double CalcularGananciasV(int membrecia, int diainicial, int mesinicial, int diafinal, int mesfinal){
      String marca = Vendedor.get(membrecia).getMarca();
@@ -90,6 +98,13 @@ public ArrayList<Producto> FiltroListarproductos (String filtro, Double precio){
        }
         }
     }return ps;
+}
+public  TreeMap<Integer,Producto> productosmejorcalificados(){
+    TreeMap<Integer,Producto> pmc = new TreeMap<>();
+    for(Producto p: this.Productos){
+        pmc.put(p.calificacionneta(), p);
+    }
+    return pmc;
 }
 public void añadircantidadproducto(String codigo, int cantidad){
     for(Producto p: this.Productos){

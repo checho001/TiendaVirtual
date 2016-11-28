@@ -19,7 +19,7 @@ public class Producto {
     private String tipo;
     private double Precio;
     private ArrayList<Integer> CalificacionPonderada;
-    private double CalificacionTotal;
+    private int CalificacionTotal;
 
     
     /*public Producto(int Codigo, int Cantidad, String Marca, String tipo) {
@@ -28,7 +28,12 @@ public class Producto {
         this.Marca = Marca;
         this.tipo = tipo;
     }*/
-
+public int calificacionneta(){
+    for(int i=0; this.CalificacionPonderada.size()>i;i++){
+        this.CalificacionTotal+=this.CalificacionPonderada.get(i);
+    } 
+    return (this.CalificacionTotal/this.CalificacionPonderada.size());
+}
     public String getCodigo() {
         return Codigo;
     }
@@ -73,15 +78,15 @@ public class Producto {
         return CalificacionPonderada;
     }
 
-    public void setCalificacionPonderada(ArrayList<Integer> CalificacionPonderada) {
-        this.CalificacionPonderada = CalificacionPonderada;
+    public void setCalificacionPonderada(int numestrellas) {
+        this.CalificacionPonderada.add(numestrellas);
     }
 
-    public double getCalificacionTotal() {
+    public int getCalificacionTotal() {
         return CalificacionTotal;
     }
 
-    public void setCalificacionTotal(double CalificacionTotal) {
+    public void setCalificacionTotal(int CalificacionTotal) {
         this.CalificacionTotal = CalificacionTotal;
     }
 

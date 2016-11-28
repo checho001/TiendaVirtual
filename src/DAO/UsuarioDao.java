@@ -21,20 +21,38 @@ import java.util.Scanner;
 import javax.swing.JOptionPane;
 import tienda.virtual.Vendedor;
 import tienda.virtual.Usuario;
+
 public class UsuarioDao {
     File file = new File("USUARIO.txt");
     public Usuario recibirdatosusuario()throws FileNotFoundException{
      String nick = JOptionPane.showInputDialog(null, "Nick");
-     Usuario usuario1 = new Usuario();
-     usuario1.setNick(nick);
+     Usuario usuarion = new Usuario();
+     usuarion.setNick(nick);
     String pass = JOptionPane.showInputDialog(null, "Pass");
-    usuario1.setPass(pass);
-    return usuario1;
+    usuarion.setPass(pass);
+    return usuarion;
     }
+    /*public Usuario recibirdatosVendedor()throws FileNotFoundException{
+     String nick = JOptionPane.showInputDialog(null, "Nick");
+     Usuario usuarion = new Vendedor();
+     usuarion.setNick(nick);
+    String pass = JOptionPane.showInputDialog(null, "Pass");
+    usuarion.setPass(pass);
+    return usuarion;
+    }*/
     public void guardarusuario(Usuario usuario)throws FileNotFoundException{
     PrintWriter pu = new PrintWriter(new FileOutputStream(this.file,true));
-    pu.write(usuario.getNick());
+    pu.write(usuario.getNick()+" ");
     pu.write(usuario.getPass());
+    pu.flush();
+    pu.close();
+    }
+    public void guardarusuario(Vendedor usuario)throws FileNotFoundException{
+    PrintWriter pu = new PrintWriter(new FileOutputStream(this.file,true));
+    pu.write(usuario.getNick()+" ");
+    pu.write(usuario.getPass()+" ");
+    pu.write(usuario.getMarca()+" ");
+    pu.write(usuario.Membrecia());
     pu.flush();
     pu.close();
     }

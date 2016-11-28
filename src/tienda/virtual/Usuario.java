@@ -6,12 +6,14 @@
 package tienda.virtual;
 
 import java.util.*;
+import javax.swing.JOptionPane;
 
 /**
  *
  * @author CLARA
  */
 public class Usuario {
+    protected TiendaVirtual tv;
     protected ArrayList<CarritoDeCompras> Factura;
     protected int numero;
     protected String Nick;
@@ -26,9 +28,12 @@ public class Usuario {
     
     
     
-    public void Comprar(){}
-
-    public void ClasificacionProductos(){}
+    public void Comprar(int diacompra, int mescompra){
+    CarritoDeCompras cdc= new CarritoDeCompras(diacompra, mescompra);
+    }
+    public void CalificarProducto(Producto p, int calificacion){
+        p.setCalificacionPonderada(calificacion);
+    }
 
     public ArrayList<CarritoDeCompras> getFactura() {
         return Factura;

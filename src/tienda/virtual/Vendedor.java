@@ -6,6 +6,7 @@
 package tienda.virtual;
 
 import java.util.ArrayList;
+import java.util.TreeMap;
 
 /**
  *
@@ -14,7 +15,7 @@ import java.util.ArrayList;
 public class Vendedor extends Usuario{
      private double ValorExtra;
     private double Ganancia;
-    private boolean Membrecia;
+    private int Membrecia;
     private String marca;
     private double valorR; // por insatisfaccion.
 
@@ -27,9 +28,16 @@ public class Vendedor extends Usuario{
         this.marca= marca;
     }*/
     
-    public void enviarpromocion(Usuario usuario){
-        
-    }
+    public void enviarpromocion(Usuario usuario, int rebaja, int numclientes){
+        int j=0;
+       TreeMap<Integer, Usuario> us =  tv.ClientesEspeciales(this.Membrecia);
+           for(Usuario s: us.values()){
+              if(numclientes>j){ 
+                 CarritoDeCompras cdc= s.getFactura().get(s.getFactura().size());
+                 cdc.setCostoTotal(cdc.getCostoTotal()*rebaja/100);
+           }
+      j++; }
+    } 
 
     public double getValorExtra() {
         return ValorExtra;
@@ -47,11 +55,11 @@ public class Vendedor extends Usuario{
         this.Ganancia = Ganancia;
     }
 
-    public boolean isMembrecia() {
+    public int Membrecia() {
         return Membrecia;
     }
 
-    public void setMembrecia(boolean Membrecia) {
+    public void setMembrecia(int Membrecia) {
         this.Membrecia = Membrecia;
     }
 
